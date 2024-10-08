@@ -7,6 +7,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
 }
 
 .banner-header h2 {
@@ -15,14 +16,17 @@
     background: linear-gradient(90deg, #217bfe 0%, #078efb 34%, #ac87eb 68%, #ee4d5d 100%);
     background-clip: text;
     font-size: 57px;
+    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
 }
 
 .banner-subheader1{
     margin-top: 15px;
+    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
 }
 
 .banner-subheader3 {
     margin-top: 32px;
+    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
 }
 
 .browse-phone-button {

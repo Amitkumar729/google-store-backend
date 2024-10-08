@@ -3,7 +3,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./recommendations.css";
 
-const Recommendations = () => {
+const Recommendations: React.FC = () => {
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -45,28 +45,28 @@ const Recommendations = () => {
           itemClass="carousel-item-padding-40-px"
         >
           <div className="rec-phone">
-            <img src="/images/p1.webp" alt="photoss" />
+            <img src="/images/p1.webp" alt="Phone model 1" />
           </div>
           <div className="rec-phone">
-            <img src="/images/p2.webp" alt="photoss" />
+            <img src="/images/p2.webp" alt="Phone model 2" />
           </div>
           <div className="rec-phone">
-            <img src="/images/p3.webp" alt="photoss" />
+            <img src="/images/p3.webp" alt="Phone model 3" />
           </div>
           <div className="rec-phone">
-            <img src="/images/p4.webp" alt="photoss" />
+            <img src="/images/p4.webp" alt="Phone model 4" />
           </div>
           <div className="rec-phone">
-            <img src="/images/p5.webp" alt="photoss" />
+            <img src="/images/p5.webp" alt="Phone model 5" />
           </div>
           <div className="rec-phone">
-            <img src="/images/p6.webp" alt="photoss" />
+            <img src="/images/p6.webp" alt="Phone model 6" />
           </div>
           <div className="rec-phone">
-            <img src="/images/p7.webp" alt="photoss" />
+            <img src="/images/p7.webp" alt="Phone model 7" />
           </div>
           <div className="rec-phone">
-            <img src="/images/p8.webp" alt="photoss" />
+            <img src="/images/p8.webp" alt="Phone model 8" />
           </div>
         </Carousel>
       </div>

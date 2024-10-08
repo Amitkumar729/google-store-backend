@@ -1,6 +1,8 @@
 import React from "react";
 import "./banner.css";
-const Banner = () => {
+
+
+const Banner: React.FC = () => {
   return (
     <div className="banner-contaiiner">
       <div className="banner-main-header">
