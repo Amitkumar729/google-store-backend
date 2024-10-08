@@ -1,0 +1,49 @@
+.carousel-container {
+  height: 100%;
+  /* padding: 20px; */
+}
+
+.carousel-item-padding-40-px {
+  /* padding: 40px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: 150px; */
+  /* border: 1px solid red; */
+}
+
+.custom-dot-list-style {
+  margin-bottom: 20px;
+}
+
+.rec-header {
+  /* border: 1px solid red; */
+  margin-top: 110px;
+}
+
+.rec-header h3 {
+  font-size: 40px;
+  /* font-weight: bold; */
+  text-align: center;
+  font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+}
+
+.rec-phones {
+  /* border: 1px solid red; */
+  margin-top: 23px;
+  /* gap: 0px; */
+}
+
+.rec-phone {
+  /* border: 1px solid red; */
+  /* max-height: 140px; */
+  max-width: max-content;
+  background: #faf9f6;
+  border-radius: 15px;
+  /* height: 165px; */
+}
+.rec-phone img {
+  /* border: 1px solid red; */
+  max-height: 300px;
+  /* background-color: #f7f9fa; */
+}
