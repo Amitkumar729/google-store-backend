@@ -1,57 +1,94 @@
 .banner-contaiiner {
     background-color: #f5f3f0;
-}
-
-.banner-main-header {
+    padding: 20px;
+  }
+  
+  .banner-main-header {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     font-family: "Google Sans", "Roboto", "Arial", sans-serif;
-}
-
-.banner-header h2 {
+    text-align: center;
+  }
+  
+  .banner-header h2 {
     margin-top: 45px;
     color: rgba(0, 0, 0, 0);
     background: linear-gradient(90deg, #217bfe 0%, #078efb 34%, #ac87eb 68%, #ee4d5d 100%);
     background-clip: text;
-    font-size: 57px;
+    font-size: 3.5rem;
     font-family: "Google Sans", "Roboto", "Arial", sans-serif;
-}
-
-.banner-subheader1{
+  }
+  
+  .banner-subheader1,
+  .banner-subheader2,
+  .banner-subheader3 {
     margin-top: 15px;
     font-family: "Google Sans", "Roboto", "Arial", sans-serif;
-}
-
-.banner-subheader3 {
-    margin-top: 32px;
-    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
-}
-
-.browse-phone-button {
+    font-size: 1rem;
+  }
+  
+  .browse-phone-button {
     border: 2px solid black;
     border-radius: 4px;
     margin-top: 30px;
-    padding: 7px;
-    padding-left: 15px;
-    padding-right: 15px;
-    font-size: 16px;
+    padding: 7px 15px;
+    font-size: 1rem;
     font-weight: 500;
     text-align: center;
     line-height: 24px;
     color: unset;
     margin-bottom: 40px;
-}
-
-.banner-photo {
-    /* border: 1px solid red; */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .browse-phone-button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .banner-photo {
     width: 100%;
     max-width: 100%;
-}
-
-.banner-photo img {
+    margin-top: 20px;
+  }
+  
+  .banner-photo img {
     max-width: 100%;
     height: auto;
     object-fit: contain;
-}
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media (max-width: 768px) {
+    .banner-header h2 {
+      font-size: 2.5rem;
+    }
+  
+    .banner-subheader1,
+    .banner-subheader2,
+    .banner-subheader3 {
+      font-size: 0.9rem;
+    }
+  
+    .browse-phone-button {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .banner-header h2 {
+      font-size: 2rem;
+    }
+  
+    .banner-subheader1,
+    .banner-subheader2,
+    .banner-subheader3 {
+      font-size: 0.8rem;
+    }
+  
+    .browse-phone-button {
+      font-size: 0.8rem;
+    }
+  }

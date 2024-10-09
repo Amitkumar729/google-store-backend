@@ -1,49 +1,122 @@
 .carousel-container {
   height: 100%;
-  /* padding: 20px; */
+  width: 100%;
 }
 
 .carousel-item-padding-40-px {
-  /* padding: 40px; */
+   /* border: 1px solid red; */
   display: flex;
   align-items: center;
   justify-content: center;
-  /* margin-top: 150px; */
-  /* border: 1px solid red; */
+  height: 400px;
 }
 
 .custom-dot-list-style {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.rec-container {
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
 }
 
 .rec-header {
-  /* border: 1px solid red; */
-  margin-top: 110px;
+  margin-top: 50px;
 }
 
 .rec-header h3 {
-  font-size: 40px;
-  /* font-weight: bold; */
+  font-size: 2.5rem;
   text-align: center;
   font-family: "Google Sans", "Roboto", "Arial", sans-serif;
 }
 
 .rec-phones {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.rec-phone-wrapper {
   /* border: 1px solid red; */
-  margin-top: 23px;
-  /* gap: 0px; */
+  position: relative;
+}
+
+.new-tag-container {
+  position: absolute;
+  font-size: 0.8rem;
+  top: 10px;
+  left: 10px;
+  /* border: 1px solid black; */
+  font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+  /* padding-left: 22px; */
+  padding: 6px;
+  border-radius: 10px;
+  color: black;
+  background: #ebf1ff;
 }
 
 .rec-phone {
   /* border: 1px solid red; */
-  /* max-height: 140px; */
-  max-width: max-content;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
   background: #faf9f6;
   border-radius: 15px;
-  /* height: 165px; */
+  overflow: hidden;
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
 }
+
+
+
+/* .rec-phone:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+} */
+
 .rec-phone img {
-  /* border: 1px solid red; */
-  max-height: 300px;
-  /* background-color: #f7f9fa; */
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.rec-phone img:hover {
+  transform: scale(1.05);
+}
+
+.rec-phone-wrapper h4 {
+  cursor: pointer;
+  margin-top: 20px;
+  text-align: center;
+  font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+}
+
+.rec-phone-wrapper h4:hover {
+  color: rgb(32, 32, 152);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
+  .rec-header h3 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .rec-header h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .rec-header h3 {
+    font-size: 1.25rem;
+  }
 }
