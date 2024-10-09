@@ -1,5 +1,132 @@
-
 .navbar-component {
-    border: 1px solid red;
-    height: 40px;
+    
+    height: auto;
+    /* border: 1px solid red;  */
+    position: relative;
+}
+
+.navbar-wrapper {
+    margin: 0 auto;
+    width: 97%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.navbar-left-container,
+.navbar-right-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hamburger-icon {
+    display: none;
+}
+
+.google-icon {
+    cursor: pointer;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-icon {
+    cursor: pointer;
+}
+
+.navbar-text {
+    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.navbar-text:hover {
+    color: rgb(23, 23, 188);
+}
+
+.responsive-nav {
+    /* border: 1px solid red; */
+    display: none;
+    flex-direction: column;
+    /* gap: 25px; */
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; 
+    text-align: center;
+    padding: 15px;
+    margin-top: 42px;
+    height: 100vh;
+}
+
+.responsive-nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 10px;
+}
+
+.responsive-nav-wrapper img {
+    width: 50px;
+}
+
+.navbar-responsive-text {
+    /* border: 1px solid red; */
+    text-align: center;
+    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.break-line {
+    border: 1px solid rgb(233, 233, 241);
+    width: 100%;
+    margin-top: 30px;
+}
+
+.responsive-order {
+    /* border: 1px solid red; */
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-left: 16px;
+}
+
+.responsive-order h3 {
+    margin-left: 15px;
+    font-weight: 400;
+    font-size: 17px;
+    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .hamburger-icon {
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar-text {
+        display: none;
+    }
+
+    .responsive-nav {
+        display: block;
+    }
+
+     
+    
 }
