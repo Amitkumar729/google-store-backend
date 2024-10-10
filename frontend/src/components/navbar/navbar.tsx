@@ -13,6 +13,9 @@ const Navbar: React.FC = () => {
   const handleNavigation = () => {
     navigate("/");
   };
+  const handleStoreNavigation = () => {
+    navigate("/store");
+  };
 
   const toggleNav = () => {
     setShowNav(!showNav);
@@ -40,7 +43,7 @@ const Navbar: React.FC = () => {
           <div className="google-icon" onClick={handleNavigation}>
             <img src='/images/google.png' style={{ width: "25px" }} alt="Google" />
           </div>
-          <div className="navbar-text" onClick={handleNavigation}>Store</div>
+          <div className="navbar-text" onClick={handleStoreNavigation}>Store</div>
         </div>
         <div className="navbar-right-container">
           <div className="nav-icons">

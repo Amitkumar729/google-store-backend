@@ -1,0 +1,189 @@
+
+.sm-parent-container{
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.sm-video-container,
+.sm-video-container2 {
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    margin-top: 70px;
+    gap: 20px;
+    padding: 0 25px;
+    flex-wrap: wrap;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+}
+.sm-wrapper {
+    /* border: 1px solid red; */
+    /* width: 90%; */
+    max-width: none;
+}
+
+.sm-headers {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.sm-header1 {
+    font-size: 50px;
+    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+    font-weight: 600;
+    color: #3c3f42;
+}
+
+.sm-header2 {
+    font-size: 16px;
+    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+    font-weight: 400;
+    color: #3c3f42;
+    margin-top: 25px;
+}
+
+.sm-video-left,
+.sm-video-right {
+    flex: 1 1 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba(245, 243, 240, 0.8);
+    /* Semi-transparent for readability */
+    border-radius: 30px;
+    padding: 15px;
+    box-sizing: border-box;
+    max-width: 400px;
+}
+
+.sm-video-text1,
+.sm-video2-text1 {
+    font-size: 40px;
+    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+    font-weight: 600;
+    color: #3c3f42;
+    text-align: center;
+}
+
+.sm-video-text2,
+.sm-video2-text2 {
+    /* border: 1px solid red; */
+    font-size: 18px;
+    /* text-align: center; */
+    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+    font-weight: 400;
+    color: #3c3f42;
+    margin-top: 20px;
+    text-align: center;
+}
+
+ 
+
+.sm-video-wrapper,
+.sm-video-wrapper2 {
+    flex: 2 1 600px;
+    /* Larger flex for video to fill more space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.sm-video-wrapper video,
+.sm-video-wrapper2 video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Cover container without distortion */
+    border-radius: 30px;
+}
+
+.sm-video-right {
+    /* border: 1px solid red; */
+    position: absolute;
+    right: 200px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(245, 243, 240, 0.8);
+    /* Semi-transparent for readability */
+    border-radius: 30px;
+    padding: 15px;
+    box-sizing: border-box;
+    max-width: 480px;
+    z-index: 1;
+    margin-bottom: 20px;
+    /* Ensure text is on top of video */
+}
+
+@media (max-width: 768px) {
+    .sm-video-container {
+        /* border: 1px solid red; */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sm-video-left,
+    .sm-video-wrapper {
+        /* border: 1px solid red; */
+        flex: 1 1 100%;
+        max-width: none;
+    }
+
+    .sm-video-container2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sm-video-right {
+        position: static; /* Remove absolute positioning */
+        transform: none;  /* Remove transformation */
+        margin: 0 auto 20px; /* Center and add margin below */
+        width: 100%; /* Ensure it takes full width */
+        max-width: none; /* Remove max-width */
+    }
+
+    .sm-video-wrapper2 {
+        flex: 1 1 100%;
+        max-width: none;
+    }
+
+}
+
+@media (max-width: 1405px) {
+
+    .sm-video-container2 {
+        /* border: 1px solid red; */
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+    }
+
+    .sm-video-wrapper2 {
+        /* border: 1px solid red; */
+        display: flex;
+        flex-direction: column-reverse;
+        /* align-items: center; */
+    }
+
+    .sm-video-right {
+        /* border: 1px solid red; */
+        position: static;  
+        transform: none;  
+        margin: 0 auto 20px; 
+        width: 100%;  
+        max-width: none;  
+    }
+
+    /* .sm-video-wrapper2 {
+        flex: 1 1 100%;
+        max-width: none;
+    } */
+}

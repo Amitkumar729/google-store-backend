@@ -1,0 +1,232 @@
+.new-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 70px;
+    padding: 20px;
+}
+
+.new-header {
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+    text-align: center;
+}
+
+.new-photo-container {
+    /* border: 1px solid red; */
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px;
+}
+
+.new-photo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1 1 calc(50% - 25px);
+    max-width: calc(50% - 25px);
+    background: #F5F3EF;
+    border-radius: 15px;
+}
+
+.new-photo-wrapper img {
+    /* border: 1px solid red; */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.new-photo-container2 {
+    width: 95.5%;
+    margin-top: 40px;
+    background: #F5F3EF;
+    border-radius: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.new-photo-container2 img {
+    width: 90%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.new-photo-container3 {
+    /* border: 1px solid red; */
+    width: 95.5%;
+    max-height: 730px;
+    margin-top: 40px;
+    background: #F5F3EF;
+    border-radius: 15px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.new-photo-container3 .new-left-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.new-left-container {
+    /* border: 1px solid red; */
+    width: fit-content;
+    margin-left: 60px;
+}
+
+.new-photo-container3 img {
+    flex: 1;
+    max-width: 50%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.new-header1 {
+    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+    margin-top: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.new-header2 {
+    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.new-header3 {
+    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 24px;
+}
+
+.new-button {
+    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+    border: 2px solid black;
+    border-radius: 4px;
+    margin-top: 30px;
+    padding: 7px 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    line-height: 24px;
+    color: unset;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.new-button:hover {
+    background-color: #e0e0e0;
+}
+
+
+.new-left-header1 {
+    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+    margin-top: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    /* text-align: center; */
+}
+
+.new-left-header2 {
+    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    /* text-align: center; */
+    margin-top: 25px;
+}
+
+.new-left-button {
+    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+    border: 2px solid black;
+    width: fit-content;
+    border-radius: 4px;
+    margin-top: 30px;
+    padding: 7px 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    line-height: 24px;
+    color: unset;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.new-left-button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .new-header {
+        font-size: 2rem;
+    }
+
+    .new-header2 {
+        font-size: 1.8rem;
+    }
+
+    .new-header1,
+    .new-header3 {
+        font-size: 0.9rem;
+    }
+
+    .new-button {
+        font-size: 0.9rem;
+    }
+
+    .new-photo-container3 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .new-photo-container3 img {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .new-header {
+        font-size: 1.8rem;
+    }
+
+    .new-header2 {
+        font-size: 1.5rem;
+    }
+
+    .new-header1,
+    .new-header3 {
+        font-size: 0.8rem;
+    }
+
+    .new-button {
+        font-size: 0.8rem;
+    }
+
+    .new-photo-wrapper {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}

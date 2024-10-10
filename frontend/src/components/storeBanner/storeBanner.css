@@ -1,0 +1,42 @@
+.sb-container {
+    text-align: center;
+    margin-top: 130px;
+    padding: 0 20px;
+}
+
+.sb-header1 {
+    font-size: 18px;
+    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+}
+
+.sb-header2 {
+    font-size: 65px;
+    font-weight: bold;
+    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+    color: #3c3f42;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .sb-header2 {
+        font-size: 48px;
+    }
+
+    .sb-container {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sb-header1 {
+        font-size: 16px;
+    }
+
+    .sb-header2 {
+        font-size: 36px;
+    }
+
+    .sb-container {
+        margin-top: 80px;
+    }
+}

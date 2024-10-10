@@ -1,0 +1,55 @@
+.ss2-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.ss2-slide {
+    padding: 0 10px;
+}
+
+.ss2-slide img {
+    border: 1px solid whitesmoke;
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom styles for react-multi-carousel */
+.carousel-container {
+    padding-bottom: 30px;
+}
+
+.react-multi-carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-dot-list-style {
+    bottom: 0;
+}
+
+.custom-dot-list-style button {
+    border: none;
+    background: #ddd;
+}
+
+.custom-dot-list-style .react-multi-carousel-dot--active button {
+    background: #1a73e8;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .ss2-container {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ss2-slide {
+        padding: 0 5px;
+    }
+}

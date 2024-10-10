@@ -1,0 +1,46 @@
+.sl3-container {
+    width: 100%;
+    max-width: 600px;  
+    margin: 0 auto;  
+    position: relative;
+}
+
+.ss3-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.ss3-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* Adjust max-height as needed */
+    object-fit: cover;
+}
+
+ 
+ 
+
+.carousel-container {
+    padding-bottom: 30px;
+}
+
+.react-multi-carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-dot-list-style {
+    bottom: 0;
+}
+
+.custom-dot-list-style button {
+    border: none;
+    background: #ddd;
+}
+
+.custom-dot-list-style .react-multi-carousel-dot--active button {
+    background: #1a73e8;
+}
