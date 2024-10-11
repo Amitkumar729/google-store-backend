@@ -2,8 +2,16 @@ import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./storeSlider.css";
+import { useNavigate } from "react-router-dom";
 
 const StoreSlider: React.FC = () => {
+    const navigate = useNavigate();
+
+
+    const handleNavigation = () => {
+        navigate("/about-phone");
+    }
+
     const responsive = {
         superLargeDesktop: {
             breakpoint: { max: 4000, min: 1400 },
@@ -31,7 +39,7 @@ const StoreSlider: React.FC = () => {
                     draggable={true}
                     showDots={true}
                     responsive={responsive}
-                    ssr={true}  
+                    ssr={true}
                     infinite={true}
                     autoPlay={false}
                     keyBoardControl={true}
@@ -49,7 +57,7 @@ const StoreSlider: React.FC = () => {
                         <h4> Pixel 9 Pro and Pro XL </h4>
                     </div>
 
-                    <div className="rec-phone-wrapper">
+                    <div className="rec-phone-wrapper" onClick={handleNavigation} >
                         <div className="new-tag-container">New</div>
                         <div className="rec-phone">
                             <img src="/images/p2.webp" alt="Phone model 2" />
@@ -100,7 +108,7 @@ const StoreSlider: React.FC = () => {
                         </h4>
                     </div>
                     <div className="rec-phone-wrapper">
-                    <div className="new-tag-container">New</div>
+                        <div className="new-tag-container">New</div>
                         <div className="rec-phone">
                             <img src="/images/p22.webp" alt="Phone model 8" />
                         </div>

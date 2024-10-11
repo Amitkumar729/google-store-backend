@@ -1,0 +1,23 @@
+.ap-container {
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.ap-wrapper {
+    /* border: 1px solid red; */
+    max-width: 80%;
+}
+
+.ap-text-container {
+    /* border: 1px solid red; */
+    display: flex;
+    gap: 20px;
+    padding: 5px;
+}
+
+.ab-text{
+    text-align: start;
+}

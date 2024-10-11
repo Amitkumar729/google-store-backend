@@ -9,21 +9,23 @@ import StorePhot from "../../components/storePhoto/storePhoto";
 import StoreSlide2 from "../../components/storeSlider2/storeSlider2";
 import StoreSlider3 from "../../components/storeSlider3/storeSlider3";
 import Faq from "../../components/faq/faq";
- 
+import AboutPhone from "../../components/aboutPhone/aboutPhone";
+
 
 const Store: React.FC = () => {
     return (
         <>
-        <Storebanner/>
-        <StoreSlider/>
-        <NNStore/>
-        <StoreMagic/>
-        <StorePhot/>
-        <StoreSlide2/>
-        <StoreSlider3/>
-        <Faq/>
-        <HomeAbout/>
-        <Footer/>
+            <Storebanner />
+            <StoreSlider />
+            <NNStore />
+            <StoreMagic />
+            <StorePhot />
+            <StoreSlide2 />
+            <StoreSlider3 />
+            <Faq />
+            <AboutPhone />
+            <HomeAbout />
+            <Footer />
         </>
     )
 }
