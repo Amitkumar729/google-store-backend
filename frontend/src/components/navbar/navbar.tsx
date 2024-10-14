@@ -17,6 +17,15 @@ const Navbar: React.FC = () => {
     navigate("/store");
   };
 
+  const handleCartNavigation = () => {
+    navigate("/cart")
+  }
+
+  const handleOrderNavigation = () => {
+    navigate("/order")
+  }
+
+
   const toggleNav = () => {
     setShowNav(!showNav);
   };
@@ -48,8 +57,8 @@ const Navbar: React.FC = () => {
         <div className="navbar-right-container">
           <div className="nav-icons">
             <div className="nav-icon"><IoIosSearch size={23} /></div>
-            <div className="nav-icon"><FaShoppingCart size={23} /></div>
-            <div className="nav-icon"><img src='/images/user.png' style={{ width: "25px" }} alt="User " /></div>
+            <div className="nav-icon" onClick={handleCartNavigation} ><FaShoppingCart size={23} /></div>
+            <div className="nav-icon" onClick={handleOrderNavigation} ><img src='/images/user.png' style={{ width: "25px" }} alt="User " /></div>
           </div>
         </div>
       </div>

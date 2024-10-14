@@ -1,15 +1,39 @@
 import React, { useState } from "react";
 import "./pixel.css";
-import { AiOutlineArrowLeft } from "react-icons/ai";
-import { AiOutlineArrowRight } from "react-icons/ai";
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert, { AlertProps } from '@mui/material/Alert';
+
+type ColorId = "peonyImg" | "winterGreenImg" | "porcelainImg" | "obsidianImg";
+type SlideDirection = "left" | "right" | "";
+
+interface ColorOption {
+    id: ColorId;
+    color: string;
+}
+
+interface SlideImages {
+    [key: string]: string[];
+}
+
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+    props,
+    ref
+) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 const Pixel: React.FC = () => {
-    const [selectedColor, setSelectedColor] = useState("peonyImg");
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [slideDirection, setSlideDirection] = useState<"left" | "right" | "">("");
+    const navigate = useNavigate();
 
+    const [selectedColor, setSelectedColor] = useState<ColorId>("peonyImg");
+    const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
+    const [slideDirection, setSlideDirection] = useState<SlideDirection>("");
+    const [openSnackbar, setOpenSnackbar] = useState<boolean>(false);
 
-    const slideImages = {
+    const slideImages: SlideImages = {
         peonyImg: [
             "/phoneImages/peony1.png",
             "/phoneImages/peony2.png",
@@ -32,21 +56,19 @@ const Pixel: React.FC = () => {
         ]
     };
 
-    const colorOptions = [
-        { id: "peonyImg", color: "#FF5F7E" }, // Pink color
-        { id: "winterGreenImg", color: "#d8ebd8" }, // Green color
-        { id: "porcelainImg", color: "#E1E1E1" }, // Light gray
-        { id: "obsidianImg", color: "#2D2D2D" }, // Dark black
+    const colorOptions: ColorOption[] = [
+        { id: "peonyImg", color: "#FF5F7E" },
+        { id: "winterGreenImg", color: "#d8ebd8" },
+        { id: "porcelainImg", color: "#E1E1E1" },
+        { id: "obsidianImg", color: "#2D2D2D" },
     ];
 
-    // Handle color click
-    const handleColorClick = (colorId: string) => {
+    const handleColorClick = (colorId: ColorId): void => {
         setSelectedColor(colorId);
         setCurrentImageIndex(currentImageIndex);
     };
 
-    // Handle next/previous image
-    const handleNext = () => {
+    const handleNext = (): void => {
         setSlideDirection("right");
         setTimeout(() => {
             setCurrentImageIndex((prevIndex) =>
@@ -56,7 +78,7 @@ const Pixel: React.FC = () => {
         }, 300);
     };
 
-    const handlePrev = () => {
+    const handlePrev = (): void => {
         setSlideDirection("left");
         setTimeout(() => {
             setCurrentImageIndex((prevIndex) =>
@@ -64,6 +86,38 @@ const Pixel: React.FC = () => {
             );
             setSlideDirection("");
         }, 300);
+    };
+
+    const handleAddToCart = async () => {
+        try {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                navigate("/login");
+                return;
+            }
+            const response = await axios.post('http://localhost:3000/cart/add', {
+                model: "Pixel",
+                color: selectedColor.replace("Img", "")
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                }
+            });
+            console.log("Item added to cart", response);
+            setOpenSnackbar(true);  r
+        } catch (error: any) {
+            if (error.response && error.response.status === 401) {
+                navigate("/login");
+            }
+            console.error("Error adding item to cart", error);
+        }
+    };
+
+    const handleCloseSnackbar = (event?: React.SyntheticEvent | Event, reason?: string) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpenSnackbar(false);
     };
 
     return (
@@ -76,7 +130,7 @@ const Pixel: React.FC = () => {
                         <h4>Tech specs</h4>
                         <h4>Compare</h4>
                     </div>
-                    <div className="p-righth">
+                    <div className="p-righth" onClick={handleAddToCart}>
                         Add to cart
                     </div>
                 </div>
@@ -85,8 +139,7 @@ const Pixel: React.FC = () => {
                 <div className="p-left-container">
                     <div className="p-header1">A phone full of <br /> firsts.</div>
                     <div className="p-header2">All kinds of incredible. With Gemini, your built-in AI assistant.</div>
-                    <div className="p-button">Add to cart</div>
-
+                    <div className="p-button" onClick={handleAddToCart}>Add to cart</div>
 
                     <div className="p-colors">
                         {colorOptions.map((option) => (
@@ -101,18 +154,16 @@ const Pixel: React.FC = () => {
                     </div>
 
                     <div className="p-color-text">
-                        <b>Color:</b> {selectedColor.replace("Img", "")}
+                        <b>Color:</b> {selectedColor}
                     </div>
                 </div>
 
                 <div className="p-right-container">
                     <div className="p-right-wrapper">
-
                         <img
                             src={slideImages[selectedColor][currentImageIndex]}
                             alt="Phone"
                             className={`p-image ${slideDirection === "right" ? "slide-right" : ""} ${slideDirection === "left" ? "slide-left" : ""}`}
-
                         />
                         <div className="p-slide-navigation">
                             <button className="p-arrow" onClick={handlePrev}><AiOutlineArrowLeft size={25} /></button>
@@ -124,6 +175,12 @@ const Pixel: React.FC = () => {
                     </div>
                 </div>
             </div>
+
+            <Snackbar open={openSnackbar} autoHideDuration={1000} onClose={handleCloseSnackbar}>
+                <Alert onClose={handleCloseSnackbar} severity="success" sx={{ width: '100%' }}>
+                    Item added to cart successfully!
+                </Alert>
+            </Snackbar>
         </div>
     );
 };

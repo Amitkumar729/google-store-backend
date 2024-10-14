@@ -7,6 +7,10 @@ const Navbar = lazy(() => import("./components/navbar/navbar"));
 const HomePage = lazy(() => import("./page/home/home"));
 const StorePage = lazy(() => import("./page/store/store"));
 const PhonePage = lazy(() => import("./page/phone/phone"));
+const Cartpage = lazy(() => import("./page/cart/cart"));
+const PurchasePage = lazy(() => import("./page/purchase/purchase"));
+const LoginPage = lazy(() => import("./page/login/login"));
+const OrderPage = lazy(() => import("./page/order/order"));
 
 function App() {
 
@@ -20,6 +24,10 @@ function App() {
             <Route path='/' element={<HomePage />} />
             <Route path='/store' element={<StorePage />} />
             <Route path='/about-phone' element={<PhonePage />} />
+            <Route path='/cart' element={<Cartpage />} />
+            <Route path='/purchase' element={<PurchasePage />} />
+            <Route path='/login' element={<LoginPage />} />
+            <Route path='/order' element={<OrderPage />} />
           </Routes>
         </Suspense>
       </div>
