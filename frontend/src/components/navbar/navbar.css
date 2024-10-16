@@ -61,7 +61,7 @@
     height: 30px;
     border-radius: 50%;
     background-color: #f5f3f0;
-    /* border: 1.5px solid #d8b37c; */
+    border: 1px solid black;
     color: black;
     display: flex;
     align-items: center;

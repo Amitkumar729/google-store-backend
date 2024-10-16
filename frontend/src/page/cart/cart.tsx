@@ -40,7 +40,7 @@ const Cart: React.FC = () => {
                     },
                 });
 
-                setCartItems(response.data);
+                setCartItems(response.data.items);
                 setLoading(false);
             } catch (err: any) {
                 if (err.response && err.response.status === 401) {
@@ -54,7 +54,7 @@ const Cart: React.FC = () => {
 
         fetchCartItems();
     }, [navigate]);
-
+console.log(cartItems)
     const handleNavigation = () => {
         navigate("/purchase");
     }

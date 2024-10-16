@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './order.css';
+import Footer from '../../components/footer/footer';
 
 interface Item {
     model: string;
@@ -79,8 +80,9 @@ const Order: React.FC = () => {
     }
 
     return (
+        <>
         <div className="user-profile-container">
-            <h1>Order History</h1>
+            <h2>Order History</h2>
             {orders.map((order) => (
                 <div key={order._id} className="order-card">
                     <div className="user-info-section">
@@ -114,6 +116,8 @@ const Order: React.FC = () => {
                 </div>
             ))}
         </div>
+        <Footer/>
+        </>
     );
 };
 

@@ -30,7 +30,7 @@ export class CartController {
 
         return {
             email: email,
-            cartItems: cartItems,
+            items: cartItems,
         }
     }
 
