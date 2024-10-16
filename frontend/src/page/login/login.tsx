@@ -10,7 +10,7 @@ interface FormData {
 interface FormErrors {
   email?: string;
   password?: string;
-  apiError?: string;  // Add a field to display API errors
+  apiError?: string;   
 }
 
 const LoginPage: React.FC = () => {
@@ -22,7 +22,7 @@ const LoginPage: React.FC = () => {
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
-  const [loading, setLoading] = useState<boolean>(false); // Add loading state
+  const [loading, setLoading] = useState<boolean>(false);   
 
   const validateForm = (): boolean => {
     let newErrors: FormErrors = {};
@@ -58,9 +58,9 @@ const LoginPage: React.FC = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     if (validateForm()) {
-      setLoading(true);  // Set loading state to true
+      setLoading(true);  
       try {
-        // Make the API request to the login endpoint
+       
         const response = await fetch('http://localhost:3000/auth/login', {
           method: 'POST',
           headers: {
@@ -73,17 +73,17 @@ const LoginPage: React.FC = () => {
         });
 
         const data = await response.json();
-        setLoading(false); // Set loading state to false
+        setLoading(false);  
 
         if (response.ok) {
-          // If login is successful, save the JWT token in localStorage or sessionStorage
+        
           localStorage.setItem('token', data.access_token);
           console.log(data.access_token);
 
-          // Navigate to the cart page
+       
           navigate('/cart');
         } else {
-          // If login fails, display the error message
+         
           setErrors((prevErrors) => ({
             ...prevErrors,
             apiError: data.message || 'Login failed. Please try again.',

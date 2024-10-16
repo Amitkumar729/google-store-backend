@@ -1,8 +1,23 @@
 .navbar-component {
-    
-    height: auto;
     /* border: 1px solid red;  */
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 10000;
+    margin-bottom: 20px;
+}
+
+
+.navbar-component.fixed-navbar {
     position: relative;
+}
+
+.navbar-component.bottom-border {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    padding-bottom: 1px;
 }
 
 .navbar-wrapper {
@@ -43,8 +58,10 @@
 
 .navbar-text {
     font-family: "Google Sans", "Roboto", "Arial", sans-serif;
-    font-size: 18px;
+    font-size: 17px;
     cursor: pointer;
+    color: #3c3f42;
+    margin-left: 8px;
 }
 
 .navbar-text:hover {
@@ -62,7 +79,7 @@
     right: 0;
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000; 
+    z-index: 1000;
     text-align: center;
     padding: 15px;
     margin-top: 42px;
@@ -99,13 +116,15 @@
     /* border: 1px solid red; */
     margin-top: 40px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: start;
     justify-content: start;
     margin-left: 16px;
+    gap: 10px;
 }
 
 .responsive-order h3 {
-    margin-left: 15px;
+    /* margin-left: px; */
     font-weight: 400;
     font-size: 17px;
     font-family: "Google Sans", "Roboto", "Arial", sans-serif;
@@ -127,6 +146,6 @@
         display: block;
     }
 
-     
-    
+
+
 }

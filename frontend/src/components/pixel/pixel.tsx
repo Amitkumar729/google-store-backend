@@ -5,6 +5,9 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
+import Footer from "../footer/footer";
+import HomeAbout from "../homeAbout/homeAbout";
+import AboutPhone from "../aboutPhone/aboutPhone";
 
 type ColorId = "peonyImg" | "winterGreenImg" | "porcelainImg" | "obsidianImg";
 type SlideDirection = "left" | "right" | "";
@@ -104,7 +107,7 @@ const Pixel: React.FC = () => {
                 }
             });
             console.log("Item added to cart", response);
-            setOpenSnackbar(true);  r
+            setOpenSnackbar(true);  
         } catch (error: any) {
             if (error.response && error.response.status === 401) {
                 navigate("/login");
@@ -121,6 +124,7 @@ const Pixel: React.FC = () => {
     };
 
     return (
+        <>
         <div className="p-container">
             <div className="p-head-wrapper">
                 <div className="p-header">
@@ -154,7 +158,7 @@ const Pixel: React.FC = () => {
                     </div>
 
                     <div className="p-color-text">
-                        <b>Color:</b> {selectedColor}
+                        <b>Color:</b> {selectedColor.replace("Img", "")}
                     </div>
                 </div>
 
@@ -182,6 +186,10 @@ const Pixel: React.FC = () => {
                 </Alert>
             </Snackbar>
         </div>
+        <AboutPhone/>
+        <HomeAbout/>
+        <Footer/>
+        </>
     );
 };
 

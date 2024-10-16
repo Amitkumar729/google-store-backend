@@ -42,7 +42,10 @@ const Cart: React.FC = () => {
 
                 setCartItems(response.data);
                 setLoading(false);
-            } catch (err) {
+            } catch (err: any) {
+                if (err.response && err.response.status === 401) {
+                    navigate("/login");
+                }
                 console.error('Error fetching cart items', err);
                 setError('Failed to load cart items. Please try again.');
                 setLoading(false);

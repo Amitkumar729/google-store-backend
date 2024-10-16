@@ -11,6 +11,7 @@ const Cartpage = lazy(() => import("./page/cart/cart"));
 const PurchasePage = lazy(() => import("./page/purchase/purchase"));
 const LoginPage = lazy(() => import("./page/login/login"));
 const OrderPage = lazy(() => import("./page/order/order"));
+const SearchBar = lazy(() => import("./page/searchbar/searchbar"));
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
             <Route path='/purchase' element={<PurchasePage />} />
             <Route path='/login' element={<LoginPage />} />
             <Route path='/order' element={<OrderPage />} />
+            <Route path='/search' element={<SearchBar />} />
           </Routes>
         </Suspense>
       </div>

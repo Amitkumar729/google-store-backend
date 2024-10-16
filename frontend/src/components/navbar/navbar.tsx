@@ -5,24 +5,58 @@ import { FaShoppingCart } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdOutlineCancel } from "react-icons/md";
+import { useLocation } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [showNav, setShowNav] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
+  const [navbarFix, setNavbarFix] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    }
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (location.pathname === '/about-phone') {
+      setNavbarFix(true);
+    } else {
+      setNavbarFix(false);
+    }
+  }, [location]);
+
+
+
 
   const handleNavigation = () => {
     navigate("/");
+    setShowNav(false);
   };
   const handleStoreNavigation = () => {
     navigate("/store");
+    setShowNav(false);
   };
 
   const handleCartNavigation = () => {
     navigate("/cart")
+    setShowNav(false);
   }
 
   const handleOrderNavigation = () => {
     navigate("/order")
+    setShowNav(false);
   }
 
 
@@ -43,7 +77,7 @@ const Navbar: React.FC = () => {
   }, [showNav]);
 
   return (
-    <div className='navbar-component'>
+    <div className={`navbar-component ${navbarFix ? 'fixed-navbar' : ''} ${scrolling ? 'bottom-border' : ''}`}>
       <div className="navbar-wrapper">
         <div className="navbar-left-container">
           <div className="hamburger-icon" onClick={toggleNav}>
@@ -82,8 +116,8 @@ const Navbar: React.FC = () => {
           </div>
           <div className="break-line"></div>
           <div className="responsive-order">
-            <FaShoppingCart size={25} />
-            <h3>Orders</h3>
+            <FaShoppingCart onClick={handleCartNavigation} size={25} />
+            <h3 onClick={handleOrderNavigation} >Orders</h3>
           </div>
         </div>
       )}

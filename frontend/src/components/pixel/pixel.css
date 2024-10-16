@@ -76,15 +76,15 @@
     max-width: 400px;
     height: auto;
     object-fit: cover;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s linear;
 }
 
 .p-image.slide-right {
-    transform: translateX(20%);
+    /* transform: translateX(20%); */
 }
 
 .p-image.slide-left {
-    transform: translateX(-20%);
+    /* transform: translateX(-20%); */
 }
 
 .p-slide-navigation {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import './order.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './order.css';
 
 interface Item {
     model: string;
@@ -53,7 +53,10 @@ const Order: React.FC = () => {
 
                 setOrders(response.data);
                 setLoading(false);
-            } catch (err) {
+            } catch (err: any) {
+                if (err.response && err.response.status === 401) {
+                    navigate("/login");
+                }
                 console.error("Error fetching order data:", err);
                 setError('Failed to load order data. Please try again later.');
                 setLoading(false);

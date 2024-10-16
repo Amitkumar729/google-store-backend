@@ -16,6 +16,8 @@
     display: flex;
     gap: 20px;
     padding: 5px;
+    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+    font-size: 13px;
 }
 
 .ab-text{

@@ -1,0 +1,35 @@
+.search-bar {
+    position: relative;
+    border: 1px solid red;
+}
+
+.search-bar input[type="text"] {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.search-input {
+    
+}
+
+.search-bar ul {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .search-bar li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .search-bar li:hover {
+    background-color: #f0f0f0;
+  }
