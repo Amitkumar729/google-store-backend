@@ -78,10 +78,10 @@ const LoginPage: React.FC = () => {
         if (response.ok) {
         
           localStorage.setItem('token', data.access_token);
-          console.log(data.access_token);
+          // console.log(data.access_token);
 
        
-          navigate('/cart');
+          navigate('/');
         } else {
          
           setErrors((prevErrors) => ({

@@ -18,13 +18,20 @@ export class CartController {
 
     @UseGuards(JwtAuthGuard)
     @Get()
-    async getCart(@Req() req) { 
+    async getCart(@Req() req) {
 
         const userId = req.user?.userId;
+        const email = req.user?.email;
+        // console.log(email);
 
         if (!userId) throw new UnauthorizedException('User ID is required.');
 
-        return this.cartService.getCartByUser(userId);  
+        const cartItems = await this.cartService.getCartByUser(userId);
+
+        return {
+            email: email,
+            cartItems: cartItems,
+        }
     }
 
     @UseGuards(JwtAuthGuard)
@@ -34,6 +41,6 @@ export class CartController {
 
         if (!userId) throw new UnauthorizedException('User ID is required.');
 
-        return this.cartService.clearCart(userId);  
+        return this.cartService.clearCart(userId);
     }
 }

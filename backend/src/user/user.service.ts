@@ -18,6 +18,8 @@ export class UserService {
     const { email, password } = createUserDto;
     const existingUser = await this.userModel.findOne({ email });
 
+    // throw new Error("this is a test error");
+ 
     if (existingUser) {
       throw new BadRequestException('User already exists');
     }

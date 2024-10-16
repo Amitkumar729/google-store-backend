@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdOutlineCancel } from "react-icons/md";
 import { useLocation } from 'react-router-dom';
+import axios from 'axios';
 
 const Navbar: React.FC = () => {
   const navigate = useNavigate();
@@ -13,6 +14,7 @@ const Navbar: React.FC = () => {
   const [showNav, setShowNav] = useState(false);
   const [scrolling, setScrolling] = useState(false);
   const [navbarFix, setNavbarFix] = useState(false);
+  const [ApiData, setApiData] = useState("A");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -76,6 +78,27 @@ const Navbar: React.FC = () => {
     };
   }, [showNav]);
 
+
+  useEffect(() => {
+    const fetchName = async () => {
+      try {
+        const token = localStorage.getItem('token');
+        if (!token) return;
+        const response = await axios.get('http://localhost:3000/cart', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          }
+        })
+        setApiData(response.data.email);
+      } catch (error) {
+        console.error('Error fetching user profile:', error);
+      }
+    }
+    
+    fetchName();
+  }, [])
+  // console.log("response:", ApiData);
+
   return (
     <div className={`navbar-component ${navbarFix ? 'fixed-navbar' : ''} ${scrolling ? 'bottom-border' : ''}`}>
       <div className="navbar-wrapper">
@@ -92,7 +115,7 @@ const Navbar: React.FC = () => {
           <div className="nav-icons">
             <div className="nav-icon"><IoIosSearch size={23} /></div>
             <div className="nav-icon" onClick={handleCartNavigation} ><FaShoppingCart size={23} /></div>
-            <div className="nav-icon" onClick={handleOrderNavigation} ><img src='/images/user.png' style={{ width: "25px" }} alt="User " /></div>
+            <div className="nav-icon-profile" onClick={handleOrderNavigation} >{ApiData.charAt(0).toUpperCase()}</div>
           </div>
         </div>
       </div>
