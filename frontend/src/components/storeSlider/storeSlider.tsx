@@ -1,35 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./storeSlider.css";
 import { useNavigate } from "react-router-dom";
 
 const StoreSlider: React.FC = () => {
+
     const navigate = useNavigate();
 
-
-    const handleNavigation = () => {
-        navigate("/about-phone");
-    }
+    const phones = [
+        { id: 1, name: "Pixel 9 Pro and Pro XL", image: "/images/p1.webp", isNew: true, onClick: () => navigate("/about-phone") },
+        { id: 2, name: "Pixel 9", image: "/images/p2.webp", isNew: true, onClick: () => navigate("/about-phone") },
+        { id: 3, name: "Pixel 9 Pro Fold", image: "/images/p3.webp", isNew: true },
+        { id: 4, name: "Pixel * Pro", image: "/images/p17.webp" },
+        { id: 5, name: "Pixel 8", image: "/images/p18.webp" },
+        { id: 6, name: "Pixel 7a", image: "/images/p20.webp" },
+        { id: 7, name: "Pixel 8a", image: "/images/p17.webp" },
+        { id: 8, name: "Compare phones", image: "/images/p21.webp" },
+        { id: 9, name: "Pixel cases", image: "/images/p22.webp" }
+    ];
 
     const responsive = {
-        superLargeDesktop: {
-            breakpoint: { max: 4000, min: 1400 },
-            items: 4,
-        },
-        desktop: {
-            breakpoint: { max: 1400, min: 680 },
-            items: 3,
-        },
-        tablet: {
-            breakpoint: { max: 680, min: 500 },
-            items: 2,
-        },
-        mobile: {
-            breakpoint: { max: 500, min: 0 },
-            items: 1,
-        },
+        superLargeDesktop: { breakpoint: { max: 4000, min: 1400 }, items: 4 },
+        desktop: { breakpoint: { max: 1400, min: 680 }, items: 3 },
+        tablet: { breakpoint: { max: 680, min: 500 }, items: 2 },
+        mobile: { breakpoint: { max: 500, min: 0 }, items: 1 },
     };
+
+
 
     return (
         <div className="rec-container">
@@ -49,72 +47,19 @@ const StoreSlider: React.FC = () => {
                     dotListClass="custom-dot-list-style"
                     itemClass="carousel-item-padding-40-px"
                 >
-                    <div className="rec-phone-wrapper">
-                        <div className="new-tag-container">New</div>
-                        <div className="rec-phone">
-                            <img src="/images/p1.webp" alt="Phone model 1" />
+                    {phones.map((phone) => (
+                        <div
+                            key={phone.id}
+                            className="rec-phone-wrapper"
+                            onClick={phone.onClick}
+                        >
+                            {phone.isNew && <div className="new-tag-container">New</div>}
+                            <div className="rec-phone">
+                                <img src={phone.image} alt={phone.name} />
+                            </div>
+                            <h4>{phone.name}</h4>
                         </div>
-                        <h4> Pixel 9 Pro and Pro XL </h4>
-                    </div>
-
-                    <div className="rec-phone-wrapper" onClick={handleNavigation} >
-                        <div className="new-tag-container">New</div>
-                        <div className="rec-phone">
-                            <img src="/images/p2.webp" alt="Phone model 2" />
-                        </div>
-                        <h4> Pixel 9</h4>
-                    </div>
-                    <div className="rec-phone-wrapper">
-                        <div className="new-tag-container">New</div>
-                        <div className="rec-phone">
-                            <img src="/images/p3.webp" alt="Phone model 3" />
-                        </div>
-                        <h4> Pixel 9 Pro Fold</h4>
-                    </div>
-                    <div className="rec-phone-wrapper">
-                        <div className="rec-phone">
-                            <img src="/images/p17.webp" alt="Phone model 4" />
-                        </div>
-                        <h4> Pixel * Pro</h4>
-                    </div>
-                    <div className="rec-phone-wrapper">
-
-                        <div className="rec-phone">
-                            <img src="/images/p18.webp" alt="Phone model 5" />
-                        </div>
-                        <h4> Pixel 8</h4>
-                    </div>
-                    <div className="rec-phone-wrapper">
-
-                        <div className="rec-phone">
-                            <img src="/images/p20.webp" alt="Phone model 6" />
-                        </div>
-                        <h4> Pixel 7a
-                        </h4>
-                    </div>
-                    <div className="rec-phone-wrapper">
-
-                        <div className="rec-phone">
-                            <img src="/images/p17.webp" alt="Phone model 7" />
-                        </div>
-                        <h4> Pixel 8a
-                        </h4>
-                    </div>
-                    <div className="rec-phone-wrapper">
-                        <div className="rec-phone">
-                            <img src="/images/p21.webp" alt="Phone model 8" />
-                        </div>
-                        <h4> Compare phones
-                        </h4>
-                    </div>
-                    <div className="rec-phone-wrapper">
-                        <div className="new-tag-container">New</div>
-                        <div className="rec-phone">
-                            <img src="/images/p22.webp" alt="Phone model 8" />
-                        </div>
-                        <h4> Pixel cases
-                        </h4>
-                    </div>
+                    ))}
                 </Carousel>
             </div>
         </div>

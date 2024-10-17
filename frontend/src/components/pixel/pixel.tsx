@@ -40,22 +40,26 @@ const Pixel: React.FC = () => {
         peonyImg: [
             "/phoneImages/peony1.png",
             "/phoneImages/peony2.png",
-            "/phoneImages/peony3.png"
+            "/phoneImages/peony3.png",
+            "/phoneImages/peony4.png",
         ],
         winterGreenImg: [
             "/phoneImages/winterGreen1.png",
             "/phoneImages/winterGreen2.png",
-            "/phoneImages/winterGreen3.png"
+            "/phoneImages/winterGreen3.png",
+            "/phoneImages/winterGreen4.png"
         ],
         porcelainImg: [
             "/phoneImages/porcelain1.png",
             "/phoneImages/porcelain2.png",
-            "/phoneImages/porcelain3.png"
+            "/phoneImages/porcelain3.png",
+            "/phoneImages/porcelain4.png"
         ],
         obsidianImg: [
             "/phoneImages/obsidian1.png",
             "/phoneImages/obsidian2.png",
-            "/phoneImages/obsidian3.png"
+            "/phoneImages/obsidian3.png",
+            "/phoneImages/obsidian4.png"
         ]
     };
 
