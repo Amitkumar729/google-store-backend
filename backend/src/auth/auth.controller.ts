@@ -8,6 +8,14 @@ export class AuthController {
 
   @Post('login')
   async login(@Body() loginUserDto: LoginUserDto) {
-    return this.authService.login(loginUserDto);
+    try {
+      return this.authService.login(loginUserDto);
+    } catch (error) {
+      return {
+        status: 'error',
+        message: 'Internal server error',
+        error: error.response || null,
+      };
+    }
   }
 }

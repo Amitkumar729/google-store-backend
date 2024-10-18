@@ -12,30 +12,45 @@ export class AuthService {
   ) {}
 
   async validateUser(email: string, password: string): Promise<any> {
-    const user = await this.userService.findUserByEmail(email);
-    // console.log("user: ", user);
-    // console.log(password, user.password);
-    // console.log(bcrypt.compare(password, user.password));
-    if (user && (await bcrypt.compare(password, user.password))) {
+    try {
+      const user = await this.userService.findUserByEmail(email);
+
+      if (user && (await bcrypt.compare(password, user.password))) {
+        return {
+          status: 'success',
+          message: 'logged in successfully',
+          id: user.id,
+          email: user.email,
+        };
+      }
+    } catch (error) {
       return {
-        message: 'logged in successfully',
-        id: user.id,
-        email: user.email,
+        status: 'error',
+        message: 'Invalid credentials.',
+        error: error.response,
       };
     }
     return null;
   }
 
   async login(loginUserDto: LoginUserDto) {
-    const { email, password } = loginUserDto;
-    // console.log("User email: ", email, " User password: ", password);
-    const user = await this.validateUser(email, password);
-    if (!user) {
-      throw new UnauthorizedException('Invalid email or password');
+    try {
+      const { email, password } = loginUserDto;
+
+      const user = await this.validateUser(email, password);
+      if (!user) {
+        throw new UnauthorizedException('Invalid email or password');
+      }
+      const payload = { email: user.email, sub: user.id };
+      return {
+        access_token: this.jwtService.sign(payload),
+      };
+    } catch (error) {
+      return {
+        status: 'error',
+        message: 'Invalid credentials.',
+        error: error.response,
+      };
     }
-    const payload = { email: user.email, sub: user.id };
-    return {
-      access_token: this.jwtService.sign(payload),
-    };
   }
 }
