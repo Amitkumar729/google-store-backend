@@ -145,7 +145,7 @@ const Pixel: React.FC = () => {
             </div>
             <div className="p-wrapper">
                 <div className="p-left-container">
-                    <div className="p-header1">A phone full of <br /> firsts.</div>
+                    <div className="p-header1">A phone full of firsts.</div>
                     <div className="p-header2">All kinds of incredible. With Gemini, your built-in AI assistant.</div>
                     <div className="p-button" onClick={handleAddToCart}>Add to cart</div>
 

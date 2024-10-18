@@ -1,6 +1,6 @@
 .banner-contaiiner {
     background-color: #f5f3f0;
-    padding: 20px;
+    /* padding: 20px; */
     /* z-index: -1; */
   }
   
@@ -50,6 +50,7 @@
   }
   
   .banner-photo {
+    /* border: 1px solid red; */
     width: 100%;
     max-width: 100%;
     margin-top: 20px;
