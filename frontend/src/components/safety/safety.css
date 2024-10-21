@@ -1,0 +1,33 @@
+.scr-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 130px;
+}
+
+.scr-header1 {
+  text-align: center;
+  color: #3c4043;
+  font-weight: 600;
+  font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+}
+.scr-header2 {
+  text-align: center;
+  color: #3c4043;
+  font-weight: 600;
+  font-size: 80px;
+  font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+  margin-top: 10px;
+}
+
+.scr-wrapper {
+    /* border: 1px solid red; */
+    margin-top: 80px;
+}
+
+.src-top img {
+    /* border: 1px solid red; */
+    width: 100%;
+
+}

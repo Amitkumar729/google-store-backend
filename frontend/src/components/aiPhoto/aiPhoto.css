@@ -1,0 +1,42 @@
+.ai-container {
+  /* border: 1px solid red; */
+  margin-top: 100px;
+}
+
+.ai-header1 {
+  text-align: center;
+  color: #3c4043;
+  font-weight: 600;
+  font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+}
+
+.ai-header2 {
+  text-align: center;
+  color: #3c4043;
+  font-weight: 600;
+  font-size: 80px;
+  font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+}
+
+.ai-header3 {
+  text-align: center;
+  color: #3c4043;
+  font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.ai-wrapper {
+    /* border: 1px solid red; */
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.ai-wrapper video {
+    /* border: 1px solid red; */
+    max-width: 1300px;
+    border-radius: 30px;
+}
