@@ -11,8 +11,13 @@ import * as bcrypt from 'bcryptjs';
 
 @Injectable()
 export class UserService {
+  private readonly trustedDomains = ['gmail.com', 'outlook.com'];
   constructor(@InjectModel(User.name) private userModel: Model<User>) {}
 
+  private isValidEmailDomain(email: string): boolean {
+    const domain = email.split('@')[1];
+    return this.trustedDomains.includes(domain);
+  }
   async createUser(
     createUserDto: CreateUserDto,
   ): Promise<{ status: string; message: string; data?: User; error?: string }> {
@@ -22,6 +27,10 @@ export class UserService {
 
       if (existingUser) {
         throw new BadRequestException('User already exists');
+      }
+
+      if (!this.isValidEmailDomain(email)) {
+        throw new BadRequestException('Email must be from a trusted provider');
       }
 
       const hashedPassword = await bcrypt.hash(password, 10);
