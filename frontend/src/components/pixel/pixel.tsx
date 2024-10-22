@@ -5,9 +5,6 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
-import Footer from "../footer/footer";
-import HomeAbout from "../homeAbout/homeAbout";
-import AboutPhone from "../aboutPhone/aboutPhone";
 
 type ColorId = "peonyImg" | "winterGreenImg" | "porcelainImg" | "obsidianImg";
 type SlideDirection = "left" | "right" | "";

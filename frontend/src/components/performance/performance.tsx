@@ -12,13 +12,10 @@ const Performance: React.FC = () => {
         <div className="performance-top">
           <img src="/images/performance.webp" />
         </div>
-        <div className="performance-bottom">
+        {/* <div className="performance-bottom">
           <img src="/images/security2.png" />
           <img src="/images/security3.png" />
-        </div>
-        <div className="performance-top">
-          <img src="/images/performance.webp" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

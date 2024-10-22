@@ -1,50 +1,124 @@
 .highlight-container {
-    /* border: 1px solid red; */
-    margin-top: 90px;
+  /* border: 1px solid red; */
+  margin-top: 90px;
 }
 
 .highlight-header {
-    text-align: center;
-    font-size: 60px;
-    margin-bottom: 20px;
-    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
-    color: #3c3f42;
-    font-weight: 600;
+  text-align: center;
+  font-size: 60px;
+  margin-bottom: 20px;
+  font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+  color: #3c3f42;
+  font-weight: 600;
 }
 
 .highlight-wrapper {
-    /* border: 1px solid red; */
-    /* max-height: 1800px; */
-    overflow: hidden;
+  /* border: 1px solid red; */
+  /* max-height: 1800px; */
+  overflow: hidden;
 }
 
 .carousel-item-padding-40-px {
-    /* border: 1px solid red; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* max-height: 600px; */
-    
-    transition: transform 0.3s ease;
-  
-  }
-  
-  .custom-dot-list-style {
-    margin-bottom: 60px;
-    text-align: center;
-  }
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* max-height: 600px; */
+
+  transition: transform 0.3s ease;
+}
+
+.custom-dot-list-style {
+  margin-bottom: 60px;
+  text-align: center;
+}
 
 .highlight-video-container p {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 20px;
-    font-weight: 600;
-    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
-    color: #3c3f42;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+  color: #3c3f42;
 }
 
 .highlight-video-container video {
-    /* border: 1px solid red; */
-    max-width: 1200px;
-    border-radius: 30px;
+  /* border: 1px solid red; */
+  max-width: 1200px;
+  border-radius: 30px;
 }
+
+@media (max-width: 1200px) {
+  .highlight-header {
+    font-size: 50px;
+  }
+
+  .highlight-video-container p {
+    font-size: 18px;
+  }
+
+  .highlight-video-container video {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 880px) {
+  .highlight-header {
+    font-size: 40px;
+  }
+
+  .highlight-video-container p {
+    font-size: 16px;
+  }
+
+  .highlight-video-container video {
+    max-width: 700px;
+    /* max-height: 700px; */
+  }
+}
+
+
+@media (max-width: 750px) {
+    .highlight-header {
+      font-size: 35px;
+    }
+  
+    .highlight-video-container p {
+      font-size: 14px;
+    }
+  
+    .highlight-video-container video {
+      max-width: 600px;
+      /* max-height: 700px; */
+    }
+  }
+
+  @media (max-width: 650px) {
+    .highlight-header {
+      font-size: 32px;
+    }
+  
+    .highlight-video-container p {
+      font-size: 15px;
+    }
+  
+    .highlight-video-container video {
+      max-width: 500px;
+      /* max-height: 700px; */
+    }
+  }
+
+  @media (max-width: 550px) {
+    .highlight-header {
+      font-size: 30px;
+    }
+  
+    .highlight-video-container p {
+      font-size: 14px;
+    }
+  
+    .highlight-video-container video {
+      max-width: 500px;
+      /* max-height: 700px; */
+    }
+  }

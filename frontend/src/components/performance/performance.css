@@ -40,10 +40,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 .performance-top img {
   /* border: 1px solid red; */
   width: 85%;
   border-radius: 30px;
+}
+
+
+@media (max-width: 1000px) {
+  .performance-header2 {
+    font-size: 30px;
+  }
 }

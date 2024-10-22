@@ -29,109 +29,249 @@
   font-weight: 500;
 }
 
-
 .hai-wrapper {
-    /* border: 1px solid red; */
-    max-width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 100px;
-    gap: 100px;
+  /* border: 1px solid red; */
+  max-width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  gap: 100px;
 }
 
 .hai-left video {
-    max-width: 570px;
-    border-radius: 30px;
+  max-width: 570px;
+  border-radius: 30px;
 }
 
 .hai-right {
-    /* border: 1px solid red; */
-    height: 100%;
-
+  /* border: 1px solid red; */
+  height: 100%;
 }
 
 .hai-rheader {
-    text-align: start;
-    color: #3c4043;
-    font-weight: 600;
-    font-size: 45px;
-    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+  text-align: start;
+  color: #3c4043;
+  font-weight: 600;
+  font-size: 45px;
+  font-family: "Google Sans", "Roboto", "Arial", sans-serif;
 }
 
 .hai-right-wrapper {
-    /* border: 1px solid red; */
-    margin-top: 30px;
-    display: flex;
-    gap: 50px;
-    /* align-items: start; */
-    /* justify-content: space-around; */
+  /* border: 1px solid red; */
+  margin-top: 30px;
+  display: flex;
+  gap: 50px;
+  /* align-items: start; */
+  /* justify-content: space-around; */
 }
 
 .hai-rtext {
-    text-align: start;
-    color: #3c4043;
-    font-weight: 600;
-    font-size: 20px;
-    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+  text-align: start;
+  color: #3c4043;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: "Google Sans", "Roboto", "Arial", sans-serif;
 }
 
 .hai-wrapper2 {
-    margin-top: 100px;
+  margin-top: 100px;
 }
 
 .hai-wrapper2 video {
-    max-width: 1200px;
-    border-radius: 30px;
+  max-width: 1200px;
+  border-radius: 30px;
 }
 
 .hai-header4 {
+  text-align: center;
+  color: #3c4043;
+  font-weight: 600;
+  font-size: 40px;
+  font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+  margin-top: 50px;
+}
+
+.hai-header5 {
+  text-align: center;
+  color: #3c4043;
+  font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.hai-wrtapper3 {
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 130px;
+  margin-top: 100px;
+  /* max-width: 90%; */
+}
+
+.hai-header6 {
+  text-align: start;
+  color: #3c4043;
+  font-weight: 600;
+  font-size: 45px;
+  font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+  margin-top: 50px;
+}
+
+.hai-header7 {
+  text-align: start;
+  color: #3c4043;
+  font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.hai-right3 video {
+  max-width: 570px;
+  border-radius: 30px;
+}
+
+@media (max-width: 1200px) {
+  .hai-header2 {
+    font-size: 70px; 
+  }
+
+  .hai-header4 {
+    /* border: 1px solid red; */
     text-align: center;
-    color: #3c4043;
-    font-weight: 600;
-    font-size: 40px;
-    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
-    margin-top: 50px;
+    font-size: 36px;  
   }
   
-  .hai-header5 {
+  .hai-rheader {
+    font-size: 40px;  
     text-align: center;
-    color: #3c4043;
-    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
-    margin-top: 15px;
-    font-weight: 500;
+  }
+
+  .hai-left video {
+    max-width: 580px;
+    border-radius: 30px;
   }
   
 
-  .hai-wrtapper3 {
+  .hai-wrapper2 video {
     /* border: 1px solid red; */
+    max-width: 900px;
+    border-radius: 30px;
+  }
+
+  .hai-right {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 130px;
-    margin-top: 100px;
-    /* max-width: 90%; */
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 992px) {
+  .hai-header2 {
+    font-size: 60px; 
   }
 
+  .hai-header4 {
+    font-size: 32px;  
+  }
 
-  .hai-header6 {
-    text-align: start;
-    color: #3c4043;
-    font-weight: 600;
-    font-size: 45px;
-    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
-    margin-top: 50px;
+  .hai-rtext {
+    font-size: 18px; 
   }
-  
-  .hai-header7 {
-    text-align: start;
-    color: #3c4043;
-    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
-    margin-top: 15px;
-    font-weight: 500;
+
+  .hai-wrapper {
+    flex-direction: column;  
+    gap: 50px;  
   }
-  
-  .hai-right3 video {
-    max-width: 570px;
+
+  .hai-wrapper2 video {
+    /* border: 1px solid red; */
+    max-width: 700px;
     border-radius: 30px;
   }
+
+  .hai-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .hai-header2 {
+    font-size: 50px; 
+  }
+
+  .hai-header4 {
+    font-size: 28px; 
+  }
+
+  .hai-rheader {
+    font-size: 36px;  
+  }
+
+  .hai-rtext {
+    font-size: 16px;  
+  }
+
+  .hai-left video {
+    max-width: 500px;  
+  }
+
+  .hai-right3 video {
+    max-width: 500px;  
+  }
+
+  .hai-wrapper2 video {
+    /* border: 1px solid red; */
+    max-width: 500px;
+    /* border-radius: 30px; */
+  }
+
+  .hai-wrtapper3 {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+
+  .hai-left3 {
+    /* border: 1px solid red; */
+    /* margin-top: 0px; */
+  }
+}
+
+@media (max-width: 576px) {
+  .hai-header2 {
+    font-size: 36px;   
+  }
+
+  .hai-header4 {
+    font-size: 24px;  
+  }
+
+  .hai-rheader {
+    font-size: 32px;  
+  }
+
+  .hai-rtext {
+    font-size: 14px;  
+  }
+
+  .hai-left video {
+    max-width: 430px; 
+  }
+
+  .hai-right3 video {
+    max-width: 430px; 
+  }
+
+  .hai-header6 {
+    text-align: center;
+  }
+
+  .hai-header7 {
+    text-align: center;
+  }
+}

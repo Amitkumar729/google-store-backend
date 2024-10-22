@@ -10,6 +10,7 @@ import AdvancePixel from "../../components/advancePixel/advancePixel";
 import HelpfulAi from "../../components/healpfulAi/healpfulAi";
 import Safety from "../../components/safety/safety";
 import Performance from "../../components/performance/performance";
+import Faq from "../../components/faq/faq";
 
 const Phone: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const Phone: React.FC = () => {
       <HelpfulAi />
       <Safety />
       <Performance />
+      <Faq/>
       <AboutPhone />
       <HomeAbout />
       <Footer />

@@ -1,55 +1,97 @@
 .apxl-container {
-    /* border: 1px solid red; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 100px;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 100px;
 }
 
 .apxl-header1 {
-    text-align: center;
-    color: #3c4043;
-    font-weight: 600;
-    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+  text-align: center;
+  color: #3c4043;
+  font-weight: 600;
+  font-family: "Google Sans", "Roboto", "Arial", sans-serif;
 }
-
 
 .apxl-header2 {
-    text-align: center;
-    color: #3c4043;
-    font-weight: 600;
-    font-size: 80px;
-    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+  text-align: center;
+  color: #3c4043;
+  font-weight: 600;
+  font-size: 80px;
+  font-family: "Google Sans", "Roboto", "Arial", sans-serif;
 }
 
-.apxl-header3{
-    text-align: center;
-    color: #3c4043;
-    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
-    margin-top: 15px;
-    font-weight: 500;
+.apxl-header3 {
+  text-align: center;
+  color: #3c4043;
+  font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+  margin-top: 15px;
+  font-weight: 500;
 }
-.apxl-header4{
-    text-align: center;
-    color: #3c4043;
-    font-family: "Google Sans", "Roboto", "Arial", sans-serif;
-    margin-top: 40px;
-    font-weight: 500;
+.apxl-header4 {
+  text-align: center;
+  color: #3c4043;
+  font-family: "Google Sans", "Roboto", "Arial", sans-serif;
+  margin-top: 40px;
+  font-weight: 500;
 }
-
 
 .apxl-wrapper {
-    /* border: 1px solid red; */
-    margin-top: 40px;
+  /* border: 1px solid red; */
+  margin-top: 40px;
 }
 
 .apxl-wrapper img {
-    /* border: 1px solid red; */
-    max-width: 1200px;
-    border-radius: 30px;
+  /* border: 1px solid red; */
+  max-width: 1200px;
+  border-radius: 30px;
 }
 
- 
+@media (max-width: 1250px) {
+  .apxl-header2 {
+    font-size: 70px; 
+  }
 
- 
+  .apxl-wrapper img {
+    /* border: 1px solid red; */
+    max-width: 1000px;
+  }
+}
+
+
+@media (max-width: 1050px) {
+    .apxl-header2 {
+      font-size: 60px; 
+    }
+  
+    .apxl-wrapper img {
+      /* border: 1px solid red; */
+      max-width: 900px;
+    }
+  }
+  
+
+  @media (max-width: 900px) {
+    .apxl-header2 {
+      font-size: 50px;  
+    }
+  
+    .apxl-wrapper img {
+      /* border: 1px solid red; */
+      max-width: 700px;
+    }
+  }
+  
+
+  @media (max-width: 750px) {
+    .apxl-header2 {
+      font-size: 40px;  
+    }
+  
+    .apxl-wrapper img {
+      /* border: 1px solid red; */
+      max-width: 500px;
+    }
+  }
+  
